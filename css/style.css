@@ -12,6 +12,13 @@ body{
     padding: 2rem;
 }
 
+/* Headings */
+
+h2{
+    color: var(--color-primary);
+    font-size: 4rem;
+}
+
 /* buttons */
 
 .btn{
@@ -28,13 +35,20 @@ body{
     text-align: center;
     transition: transform 0.15s;
 }
-.btn-block{
+.btn--block{
     width: 100%;
     display: inline-block;
+}
+.btn--no-box{
+    text-decoration: underline;
+    border: 0;
 }
 .btn:hover{
     transform: scale(1.05);
     background:rgb(50, 50, 50)
+}
+.btn--no-box:hover{
+    background-color: var(--color-background);
 }
 .btn:focus{
     border-color: var(--color-focus);
@@ -45,5 +59,22 @@ body{
         font-size: 2rem;
         max-width: 300px;
         padding: 1rem 0;
+    }
+}
+
+/* Actions */
+
+.actions{
+    padding: 5rem;
+}
+.nav-bar{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+@media screen and (min-width:1024px) {
+    .actions{
+        border-left: 1px solid var(--color-primary);
     }
 }
