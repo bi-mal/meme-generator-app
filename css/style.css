@@ -2,6 +2,7 @@
     --color-primary:#deb887;
     --color-background:#000;
     --color-focus:#fff;
+    --color-headings:#ffbd6d;
 }
 html{
     font-size: 62.5%;
@@ -17,7 +18,7 @@ body{
 /* Headings */
 
 h2{
-    color: var(--color-primary);
+    color:var(--color-headings);   
     font-size: 4rem;
     text-align: center;
 }
@@ -110,4 +111,8 @@ p{
         order: 2;
         min-width: 280px;
     }
+}
+
+img{
+    width: 500px;
 }
