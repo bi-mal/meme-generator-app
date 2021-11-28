@@ -2,12 +2,17 @@
  * TODO: Implement a function that clears all the content
  * prior to generating new random content
  */
-const show_Meme=document.querySelector('#show-meme');
-show_Meme.addEventListener('click',showMeme);
+const displayMeme=document.querySelector('#display-meme');
+displayMeme.addEventListener('click',showMeme);
+
+const displayJoke=document.querySelector('#display-joke');
+displayJoke.addEventListener('click',showJoke);
+
+const displayQuote=document.querySelector('#display-quote');
+displayQuote.addEventListener('click',showQuote);
 
  function clearAll() {
     let result=document.getElementsByClassName('clear');
-    console.log("here");
     for(let i=0;i<result.length;i++){
         result[i].remove();
     }    
@@ -26,9 +31,8 @@ show_Meme.addEventListener('click',showMeme);
    const meme=document.createElement('img');
    meme.setAttribute('src',randomMemeUrl);
    meme.setAttribute('class','clear');
-   const jokeNode=document.querySelector('#joke');
-   const pNode=jokeNode.parentNode;
-   pNode.insertBefore(meme,jokeNode);
+   const memeNode=document.getElementById('meme');
+   memeNode.insertAdjacentElement('afterend',meme);
  }
  
  /**
@@ -38,7 +42,13 @@ show_Meme.addEventListener('click',showMeme);
   */
  function showJoke() {
    // Value is a string representing the joke
+   clearAll();
    const randomJokeText = getRandomData("jokes");
+   const joke=document.createElement('p');
+   joke.setAttribute('class','clear decor');
+   joke.textContent=randomJokeText;
+   const jokeNode=document.getElementById('joke');
+   jokeNode.insertAdjacentElement('afterend',joke);
  }
  
  /**
@@ -47,8 +57,18 @@ show_Meme.addEventListener('click',showMeme);
   * - Never show more than 1 quote at a time
   */
  function showQuote() {
+    clearAll();
    // Value should be in format: { quote: '', author: '' }
    const randomQuote = getRandomData("quotes");
+   const quote=document.createElement('p');
+   quote.textContent=randomQuote.quote;
+   const lineBreak=document.createElement('br');
+   quote.append(lineBreak);
+   const author=document.createTextNode('-'+randomQuote.author);
+   quote.append(author);
+   quote.setAttribute('class','clear decor');
+   const quoteNode=document.getElementById('quote');
+   quoteNode.insertAdjacentElement('afterend',quote);
  }
  
  /**
