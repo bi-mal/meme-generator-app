@@ -1,7 +1,3 @@
-/**
- * TODO: Implement a function that clears all the content
- * prior to generating new random content
- */
 const displayMeme=document.querySelector('#display-meme');
 displayMeme.addEventListener('click',showMeme);
 
@@ -11,9 +7,19 @@ displayJoke.addEventListener('click',showJoke);
 const displayQuote=document.querySelector('#display-quote');
 displayQuote.addEventListener('click',showQuote);
 
+const displayRiddle=document.querySelector('#display-riddle');
+displayRiddle.addEventListener('click',showRiddle);
+
+const displayAnswer=document.querySelector('#display-answer');
+displayAnswer.addEventListener('click',revealAnswers);
+
+/**
+ * TODO: Implement a function that clears all the content
+ * prior to generating new random content
+ */
  function clearAll() {
-    let result=document.getElementsByClassName('clear');
-    for(let i=0;i<result.length;i++){
+    let result=document.getElementsByClassName('clear'); 
+    for(let i=0;i<result.length;){
         result[i].remove();
     }    
  }
@@ -78,8 +84,20 @@ displayQuote.addEventListener('click',showQuote);
   * - Always hide the riddle's answer initially
   */
  function showRiddle() {
+    clearAll();
    // Value should be in format: { question: '', answer: '' }
    const randomRiddle = getRandomData("riddles");
+   const riddle=document.createElement('p');
+   const answer=document.createElement('p');
+   answer.textContent=randomRiddle.answer;
+   answer.style.display='none';
+   riddle.textContent=randomRiddle.question;
+   riddle.setAttribute('class','clear decor');
+   riddle.setAttribute('id','displayed-riddle');
+   answer.setAttribute('class','clear decor');
+   answer.setAttribute('id','answer');
+   document.getElementById('riddle').insertAdjacentElement('afterend',riddle);
+   riddle.insertAdjacentElement('afterend',answer);
  }
  
  /**
@@ -89,7 +107,20 @@ displayQuote.addEventListener('click',showQuote);
   *   that the answer is already revealed
   * - If there is a riddle shown but no answer, unhide the answer!
   */
- function revealAnswers() {}
+ function revealAnswers() {
+    const riddle=document.querySelector('#displayed-riddle');
+    if(riddle==null){
+        clearAll();
+        const alert=document.createElement('p');
+        alert.textContent="there is no riddle shown";
+        alert.setAttribute('class','clear decor');
+        document.getElementById('riddle').insertAdjacentElement('afterend',alert);
+    }
+    const answer=document.querySelector('#answer');
+    if(answer!=null){
+        answer.style.display='block';
+    }
+ }
  
  /**
   * This function is used to get random data.  Don't worry about how it works, just know how to use it.  Usage is pre-filled in the functions above already, but here's an explanation of the function anyways.
@@ -143,7 +174,7 @@ displayQuote.addEventListener('click',showQuote);
  
  // Sourced from: http://www.devtopics.com/best-programming-jokes/
  const jokes = [
-   "This statement",
+   "Two bytes meet.  The first byte asks, Are you ill? The second byte replies, No, just feeling a bit off.",
    "Eight bytes walk into a bar.  The bartender asks, “Can I get you anything?” “Yeah,” reply the bytes.  “Make us a double.”",
    "There are only 10 kinds of people in this world: those who know binary and those who don’t.",
    "All programmers are playwrights, and all computers are lousy actors.",
