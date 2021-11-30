@@ -157,6 +157,7 @@ displayAnswer.addEventListener('click',revealAnswers);
  
  // Source: https://www.thecoderpedia.com/blog/programming-memes/, Reddit
  const memes = [
+   "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Coding-Memes-Launching-of-Software-958x1024.jpg",
    "https://i.redd.it/a0v87gwzoge61.jpg",
    "https://i.redd.it/q29egav34ee61.jpg",
    "https://i.redd.it/iij16swxjie61.jpg",
@@ -170,6 +171,19 @@ displayAnswer.addEventListener('click',revealAnswers);
    "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Programming-Memes-Error-in-Code-896x1024.jpg",
    "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Coding-Meme-Code-Comments-be-Like-925x1024.jpg",
    "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Internet-Explorer-Joke-915x1024.jpg",
+   "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Hello-World-Jokes-685x1024.jpg",
+   "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Coding-Jokes-Studying-Software-Engineering-850x1024.jpg",
+   "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Programming-Memes-Hello-World-893x1024.jpg",
+   "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Are-you-a-robot-Meme-1024x925.jpg",
+   "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Coding-Jokes-Bugs-Errors-Lines-of-Code-854x1024.jpg",
+   "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Programming-Memes-YouTube-Programming-Videos-823x1024.jpg",
+   "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Internet-Explorer-Joke-Meme-1024x954.jpg",
+   "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Online-Courses-Memes-1024x933.jpg",
+   "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Coding-Jokes-Programmer-Life-1024x955.jpg",
+   "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Programming-Memes-Java-Jokes-842x1024.jpg",
+   "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Front-End-vs-Back-End-1024x1022.jpg",
+   "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Programming-Memes-Google-Chrome-822x1024.jpg",
+   "https://www.thecoderpedia.com/wp-content/uploads/2020/06/Programming-Mistakes-1024x993.jpg"
  ];
  
  // Sourced from: http://www.devtopics.com/best-programming-jokes/
